@@ -27,12 +27,6 @@
       state: enabled
       immediate: yes
 
-  - name: snmp service enabled and running
-    service:
-      name: snmpd
-      enabled: true
-      state: started
-
   - name: Copy snmpd.conf
     copy:
       src: snmpd.conf
@@ -41,3 +35,10 @@
       group: root
       backup: yes
       mode: '0604'
+
+  - name: snmp service enabled and running
+    service:
+      name: snmpd
+      enabled: true
+      state: started
+
