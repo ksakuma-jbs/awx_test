@@ -1,0 +1,34 @@
+---
+- name: net-snmp install
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: latest snmp version installed
+    yum:
+      name: net-snmp
+      state: latest
+
+  - name: latest firewalld version installed
+    yum:
+      name: firewalld
+      state: latest
+
+  - name: firewalld enabled and running
+    service:
+      name: firewalld
+      enabled: true
+      state: started
+
+  - name: firewalld permits snmp service
+    firewalld:
+      service: snmp
+      permanent: true
+      state: enabled
+      immediate: yes
+
+  - name: snmp service enabled and running
+    service:
+      name: snmpd
+      enabled: true
+      state: started
