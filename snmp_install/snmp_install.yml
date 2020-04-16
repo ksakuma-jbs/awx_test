@@ -32,3 +32,12 @@
       name: snmpd
       enabled: true
       state: started
+
+  - name: Copy snmpd.conf
+    copy:
+      src: snmpd.conf
+      dest: /etc/snmp/snmpd.conf
+      owner: root
+      group: root
+      backup: yes
+      mode: '0604'
