@@ -1,0 +1,12 @@
+---
+- name: Yum Update All
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+  - name: latest Packages Update
+    yum:
+      name: 'zsh'
+      state: latest
+
