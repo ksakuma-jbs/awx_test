@@ -2,6 +2,7 @@
 - name: Yum Update All
   hosts: all
   become: yes
+  Gathering Facts: yes
 
   tasks:
   - name: latest Packages Update
