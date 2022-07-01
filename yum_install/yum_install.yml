@@ -6,7 +6,7 @@
 
   tasks:
   - name: Install Packages
-    yum:
+    dnf:
       name: 'zsh'
       state: latest
 
