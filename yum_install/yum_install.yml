@@ -1,11 +1,11 @@
 ---
-- name: Yum Update All
+- name: Yum Install
   hosts: all
   become: yes
   gather_facts: yes
 
   tasks:
-  - name: latest Packages Update
+  - name: Install Packages
     yum:
       name: 'zsh'
       state: latest
